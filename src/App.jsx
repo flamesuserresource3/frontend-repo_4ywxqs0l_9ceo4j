@@ -1,28 +1,38 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import Products from './components/Products';
+import StoryTestimonials from './components/StoryTestimonials';
+import ContactFooter from './components/ContactFooter';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+    <div className="min-h-screen scroll-smooth bg-white text-rose-900">
+      {/* Simple top nav */}
+      <header className="sticky top-0 z-50 border-b border-rose-100/60 bg-white/70 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+          <a href="#home" className="font-serif text-xl font-bold text-rose-700">Mithaas by Ritik</a>
+          <nav className="hidden gap-6 text-sm text-rose-800/80 sm:flex">
+            <a href="#menu" className="hover:text-rose-900">Menu</a>
+            <a href="#contact" className="hover:text-rose-900">Order</a>
+          </nav>
+          <a
+            href="https://wa.me/"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full bg-green-600 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-green-700"
           >
-            Count is {count}
-          </button>
+            WhatsApp
+          </a>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <Products />
+        <StoryTestimonials />
+        <ContactFooter />
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
